@@ -25,10 +25,10 @@
         <div class="container">
             <div class="jumbotron">
                 <h1>Let's have Fun</h1>
-                <button id="btn1">#btn1</button>
-                <button id="btn2">#btn2</button>
-                <button id="btn3">#btn3</button>
-                <button id="btn4">#btn4</button>
+                <button id="btn1" class="panel-button" data-panelid="panel1">#btn1</button>
+                <button id="btn2" class="panel-button" data-panelid="panel2">#btn2</button>
+                <button id="btn3" class="panel-button" data-panelid="panel3">#btn3</button>
+                <button id="btn4" class="panel-button" data-panelid="panel4">#btn4</button>
             </div>
 
             <div class="row">
@@ -126,6 +126,12 @@
                 //})
             })
             */
+            var content = "This is my new content";
+            $(".panel-button").on("click", function () {
+                var panelId = $(this).attr("data-panelid");
+                $("#" + panelId).toggle();
+                $("#" + panelId + " .panel-body").html(content);
+            })
         </script>
     </body>
 </html>﻿
