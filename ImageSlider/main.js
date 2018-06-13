@@ -16,8 +16,8 @@ $(function () {
     //setInterval
         //animate margin-left
     setInterval(function () {
-        $("#slider .slides").animate({'margin-left': "-=720"}, 1000);
-    }, 3000);
+        $("#slider .slides").animate({'margin-left': "-=" + width}, animationSpeed);
+    }, pause);
         //if it's the last slide, go back to position 1 (0px)
     //listen for mouseenter and pause
     //resume on mouseleave
