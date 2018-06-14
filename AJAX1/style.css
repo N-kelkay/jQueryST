@@ -33,3 +33,10 @@ h2, h4, p{
     padding: 10px;
     text-align: center;
 }
+
+#AJAX {
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    background: #999999;
+}
