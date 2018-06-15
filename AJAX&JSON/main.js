@@ -79,5 +79,13 @@ $(function () {
 //         outString += '<p>' + data[i].name + ' is a ' + data[i].species;
 //     }
 //
+//    //element.insertAdjacentHTML(position, text);
+//    //Parameters
+//    //position
+//    //A DOMString representing the position relative to the element; must be one of the following strings:
+//        //'beforebegin': Before the element itself.
+//        //'afterbegin': Just inside the element, before its first child.
+//        //'beforeend': Just inside the element, after its last child.
+//        //'afterend': After the element itself.
 //     animalContainer.insertAdjacentHTML('beforeend', outString);
 // }
