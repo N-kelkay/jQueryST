@@ -19,6 +19,11 @@ API: Application Programming Interface
 $(function () {
     $.ajax({
         type: 'GET',
-        utl: '/api/orders'
+        utl: '/api/orders',
+
+        //To display on page
+        success: function(data){
+            console.log('success', data);
+        }
     });
 })
