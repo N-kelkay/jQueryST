@@ -41,13 +41,16 @@ $(function () {
     })
 
     function renderHTML(data) {
+        //Gets the names and species types in the downloaded data and puts them in paragraph form in a String var called returnString
         var returnString = "";
         for(var i = 0; i < data.length; i++){
-            returnString += data[i].value;
+            returnString += '<p>' + data[i].name + ' is a ' + data[i].species + '</p>';
         }
 
-        console.log(returnString);
-        $("#animal-info").insertAdjacentHTML("beforeend", returnString);
+        //puts the returnString in the HTML file
+        //append: to insert specified content as the last child of each element in the jQuery collection
+        //to insert as the first child, use .prepend()
+        $("#animal-info").append(returnString);
     }
 })
 
