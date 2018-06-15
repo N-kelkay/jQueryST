@@ -10,11 +10,11 @@ $(function () {
         //figure out which panel to show
         var panelToShow = $(this).attr('rel');
 
-        $panel.find('.panel.active').slideUp(200, showNextPanel);
+        $panel.find('.panel.active').slideUp(300, showNextPanel);
 
         function showNextPanel() {
             $(this).removeClass("active");
-            $("#" + panelToShow).slideDown(200, function () {
+            $("#" + panelToShow).slideDown(300, function () {
                 $(this).addClass("active");
             })
         }
