@@ -32,15 +32,29 @@ $(function () {
             //use this, it tells the computer to see the file as JSON. It makes it easier
             //for the programmer to uses index to get specific things from the data
             var ourData = JSON.parse(ourRequest.responseText);
-            console.log(ourData[0]);
+            renderHTML(ourData);
         }
     //After finished getting the files, send the files
     //*If there is any error like : Failed to load resource: net::ERR_BLOCKED_BY_CLIENT
     //*It might be because of an add block or some kind of firewall
         ourRequest.send();
     })
+
+    function renderHTML(data) {
+        var returnString = "";
+        for(var i = 0; i < data.length; i++){
+            returnString += data[i].value;
+        }
+
+        console.log(returnString);
+        $("#animal-info").insertAdjacentHTML("beforeend", returnString);
+    }
 })
 
 
-
+// var buttonPressed = document.getElementById("btn");
+//
+// buttonPressed.addEventListener("click", function () {
+//
+// });
 
