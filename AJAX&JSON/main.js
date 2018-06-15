@@ -1,5 +1,7 @@
 /*
- * AJAX [Asynchronous:(in the background; not requiring refresh) JavaScript And XML:(data format very similar to JSON)]: Downloads new data from a different URL
+ * AJAX (Asynchronous JavaScript and XML): [Asynchronous:(in the background; not requiring refresh) JavaScript And XML:(data format very similar to JSON. We are using JSON instead of XML but XML sounds better with the acronym so... ya)]:
+  * Downloads new data from a different URL^
+  *
  * JSON (Java Script Object Notation): Storing and working with data (sending, receiving and storing data)
  *      - Objects and Arrays nested inside each other
  */
@@ -8,6 +10,7 @@
 //XMLHttpRequest: Web browsers have a built in tool called XMLHttpRequest.
 // This tool does the heavy lifting  of establishing a connection with the
 // desired URL to download data from, and then it lets the user send and receive data
+//BTW: technically It should be called JSONHttpRequest, because it is downloading JSON files. We no longer use XML files, but since XML was here for a long time it stuck :p
 var ourRequest = new XMLHttpRequest();
 
 //Second Step is to request something
