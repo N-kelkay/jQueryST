@@ -47,7 +47,7 @@ $(function () {
     });
 
     function addOrder(order){
-        $orders.append("<li>Name: " + item.name + ", Drink: " + item.drink + "</li>");
+        $orders.append("<li>Name: " + order.name + ", Drink: " + order.drink + "</li>");
     }
 
     $("#add-order").on("click", function () {
@@ -62,7 +62,7 @@ $(function () {
             url: "/jQueryTutorial/AJAX1/file.json",
             data: order,
             success: function (newOrder) {
-                $orders.append("<li>Name: " + $name.val() + ", Drink: " + $drink.val() + "</li>")
+                addOrder(newOrder);
             },
             error: function () {
                 alert("ERROR");
