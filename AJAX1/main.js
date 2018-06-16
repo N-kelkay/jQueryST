@@ -38,13 +38,17 @@ $(function () {
             //Each allows you to run through an array and run a function on each individual thing in the array
             // pass in an i (i=index of position in array), and the actual item
             $.each(data, function (i, item) {
-                $orders.append("<li>Name: " + item.name + ", Drink: " + item.drink + "</li>")
+                addOrder(item);
             })
         },
         error: function () {
             alert("Loading Error");
         }
     });
+
+    function addOrder(order){
+        $orders.append("<li>Name: " + item.name + ", Drink: " + item.drink + "</li>");
+    }
 
     $("#add-order").on("click", function () {
 
