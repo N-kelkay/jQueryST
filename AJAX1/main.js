@@ -22,6 +22,11 @@ $(function () {
 
     //Path to the order id, where text is inserted
     var $orders = $("#orders");
+
+    //Path to drinks and name
+    var $name = $("#name");
+    var $drink = $("#drink");
+
     $.ajax({
         type: 'GET',
 
@@ -30,13 +35,34 @@ $(function () {
 
         //To display on page
         success: function(data){
-            console.log('success', data);
-
             //Each allows you to run through an array and run a function on each individual thing in the array
             // pass in an i (i=index of position in array), and the actual item
             $.each(data, function (i, item) {
                 $orders.append("<li>Name: " + item.name + ", Drink: " + item.drink + "</li>")
             })
+        },
+        error: function () {
+            alert("Loading Error");
         }
     });
+
+    $("#add-order").on("click", function () {
+
+        var order = {
+            name: $name.val(),
+            drink: $drink.val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/jQueryTutorial/AJAX1/file.json",
+            data: order,
+            success: function (newOrder) {
+                $orders.append("<li>Name: " + $name.val() + ", Drink: " + $drink.val() + "</li>")
+            },
+            error: function () {
+                alert("ERROR");
+            }
+        })
+    })
 })
