@@ -19,13 +19,24 @@ API: Application Programming Interface
 
 //First line check if the document is ready, so if every thing is loaded
 $(function () {
+
+    //Path to the order id, where text is inserted
+    var $orders = $("#orders");
     $.ajax({
         type: 'GET',
-        utl: '/api/orders',
+
+        //Input url or file path after the local host number
+        url: '/jQueryTutorial/AJAX1/file.json',
 
         //To display on page
         success: function(data){
             console.log('success', data);
+
+            //Each allows you to run through an array and run a function on each individual thing in the array
+            // pass in an i (i=index of position in array), and the actual item
+            $.each(data, function (i, item) {
+                $orders.append("<li>Name: " + item.name + ", Drink: " + item.drink + "</li>")
+            })
         }
     });
 })

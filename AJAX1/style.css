@@ -23,6 +23,8 @@
 
 #orders {
     text-align: center;
+    /*removes bullets*/
+    list-style-type: none;
 }
 
 .order{
