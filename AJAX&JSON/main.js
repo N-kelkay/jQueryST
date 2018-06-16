@@ -43,7 +43,6 @@ $(function () {
             } else {
                 alert("ERROR");
             }
-
         }
         //To handle with error before we send:
         ourRequest.onerror = function() {
@@ -99,7 +98,6 @@ $(function () {
         $("#animal-info").append(returnString);
     }
 })
-
 
 //OR (without jQuery):
 
