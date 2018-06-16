@@ -69,11 +69,12 @@ $(function () {
 
 // var buttonPressed = document.getElementById("btn");
 // var animalContainer = document.getElementById('animal-info');
+// var count = 1;
 //
 // buttonPressed.addEventListener("click", function () {
 //     var outRequest = new XMLHttpRequest;
 //
-//     outRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+//     outRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + count + '.json');
 //
 //     outRequest.onload = function () {
 //         var ourData = JSON.parse(outRequest.responseText);
@@ -81,6 +82,10 @@ $(function () {
 //         outPutToWeb(ourData);
 //     }
 //     outRequest.send();
+//     count++
+//     if(count >= 4){
+//          buttonPressed.classList.add("hide-me");
+//     }
 // });
 //
 // function outPutToWeb(data) {

@@ -1,0 +1,10 @@
+
+body {
+    margin: 3%;
+    padding: 20px;
+}
+
+/*Hides the button when this is called*/
+.hide-me {
+    display: none;
+}
