@@ -1,5 +1,8 @@
 $(function () {
+    var count = 0;
     $("#btn").on("click", function () {
+        count++;
+
             /*
      * AJAX (Asynchronous JavaScript and XML): [Asynchronous:(in the background; not requiring refresh) JavaScript And XML:(data format very similar to JSON. We are using JSON instead of XML but XML sounds better with the acronym so... ya)]:
       * Downloads new data from a different URL^
@@ -21,7 +24,16 @@ $(function () {
     //To send data to the server you type 'POST'
     //Second Argument:
     //Url to the server to receive or send data
-        ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+        if(count == 1) {
+            ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+        }else if(count == 2){
+            ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-2.json');
+        } else if(count == 3){
+            ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-3.json');
+        }
+        else {
+            $("#btn").hide();
+        }
     //Third step is to write what to do once the data is sent or received
     //Self explanatory: on load what should the website do?
         ourRequest.onload = function () {
