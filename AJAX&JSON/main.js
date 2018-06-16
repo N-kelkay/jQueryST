@@ -30,14 +30,20 @@ $(function () {
         //Third step is to write what to do once the data is sent or received
         //Self explanatory: on load what should the website do?
         ourRequest.onload = function () {
-            //responseText is the text pulled from the server
-            //The following method views the data receive as a giant text rather then a JSON file
-            //DONE USE (if the import data is JSON): var ourData = ourRequest.responseText;
+            //Checks for connection errors
+            if(ourRequest.status >= 200 && ourRequest.status <= 400){
+                //responseText is the text pulled from the server
+                //The following method views the data receive as a giant text rather then a JSON file
+                //DONE USE (if the import data is JSON): var ourData = ourRequest.responseText;
 
-            //use this, it tells the computer to see the file as JSON. It makes it easier
-            //for the programmer to uses index to get specific things from the data
-            var ourData = JSON.parse(ourRequest.responseText);
-            renderHTML(ourData);
+                //use this, it tells the computer to see the file as JSON. It makes it easier
+                //for the programmer to uses index to get specific things from the data
+                var ourData = JSON.parse(ourRequest.responseText);
+                renderHTML(ourData);
+            } else {
+                alert("ERROR");
+            }
+
         }
         //To handle with error before we send:
         ourRequest.onerror = function() {
