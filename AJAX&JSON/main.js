@@ -45,7 +45,7 @@ $(function () {
         ourRequest.send();
 
     }else {
-        $("#btn").hide();
+        $("#btn").hide(300);
     }
 
     })
@@ -54,7 +54,16 @@ $(function () {
         //Gets the names and species types in the downloaded data and puts them in paragraph form in a String var called returnString
         var returnString = "";
         for(var i = 0; i < data.length; i++){
-            returnString += '<p>' + data[i].name + ' is a ' + data[i].species + '</p>';
+            returnString += "<p>" + data[i].name +  " is a " + data[i].species + ', that likes to eat ';
+
+            for(var ii = 0; ii < data[i].foods.likes.length; ii++){
+                if(ii ==0){
+                    returnString += data[i].foods.likes[ii];
+                }else {
+                    returnString += ' and ' + data[i].foods.likes[ii];
+                }
+            }
+            returnString += '.</p>';
         }
 
         //puts the returnString in the HTML file
