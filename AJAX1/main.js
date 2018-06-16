@@ -16,6 +16,8 @@ API: Application Programming Interface
   or check the weather on your phone, you’re using an API.
  */
 
+
+//First line check if the document is ready, so if every thing is loaded
 $(function () {
     $.ajax({
         type: 'GET',
