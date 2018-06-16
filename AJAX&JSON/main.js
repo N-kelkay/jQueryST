@@ -39,7 +39,13 @@ $(function () {
             var ourData = JSON.parse(ourRequest.responseText);
             renderHTML(ourData);
         }
+        //To handle with error before we send:
+        ourRequest.onerror = function() {
+            alert("Connection Error: please disable any ad blockers or firewalls. Refresh the page after doing so")
+        }
+
         //After finished getting the files, send the files
+        //*Sends AJAX request
         //*If there is any error like : Failed to load resource: net::ERR_BLOCKED_BY_CLIENT
         //*It might be because of an add block or some kind of firewall
         ourRequest.send();
@@ -62,7 +68,22 @@ $(function () {
                 }else {
                     returnString += ' and ' + data[i].foods.likes[ii];
                 }
+
+                if(ii = data[i].foods.likes.length){
+                    returnString += '. '
+                }
             }
+
+            returnString += 'But does not like, '
+
+            for(var ii = 0; ii < data[i].foods.dislikes.length; ii++){
+                if(ii ==0){
+                    returnString += data[i].foods.dislikes[ii];
+                }else {
+                    returnString += ' and ' + data[i].foods.dislikes[ii];
+                }
+            }
+
             returnString += '.</p>';
         }
 
