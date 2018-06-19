@@ -41,7 +41,7 @@ $(function () {
         type: 'GET',
 
         //Input url or file path after the local host number
-        url: 'http://rest.learncode.academy/api/learncode/friends',
+        url: '/jQueryTutorial/AJAX1/file.json',
 
         //To display on page
         success: function(data){
@@ -65,7 +65,7 @@ $(function () {
 
         $.ajax({
             type: "POST",
-            url: "/http://rest.learncode.academy/api/learncode/friends",
+            url: "/jQueryTutorial/AJAX1/file.json",
             data: order,
             success: function (newOrder) {
                 addOrder(newOrder);
@@ -76,6 +76,12 @@ $(function () {
         })
     })
 
+    $('.remove').on('click', function () {
+        $.ajax({
+            type: 'DELETE',
+            url: "/jQueryTutorial/AJAX1/file.json" + $(this).attr('data-id'),
+        });
+    })
 });
 
 
