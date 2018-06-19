@@ -27,7 +27,12 @@ $(function () {
     var $name = $("#name");
     var $drink = $("#drink");
 
-    var orderTemplate = "<li>name: {{name}}, drink: {{drink}}</li>";
+    var orderTemplate = "" +
+        "<li>" +
+        "<p><strong>name: </strong>{{name}}</p>,"+
+        "<p><strong>drink: </strong>{{drink}}</p>" +
+        "<button data-id='{{id}}'></button>" +
+        "</li>";
     function addOrder(order){
         $orders.append(Mustache.render(orderTemplate, order));
     }
@@ -36,7 +41,7 @@ $(function () {
         type: 'GET',
 
         //Input url or file path after the local host number
-        url: '/jQueryTutorial/AJAX1/file.json',
+        url: 'http://rest.learncode.academy/api/learncode/friends',
 
         //To display on page
         success: function(data){
@@ -60,7 +65,7 @@ $(function () {
 
         $.ajax({
             type: "POST",
-            url: "/jQueryTutorial/AJAX1/file.json",
+            url: "/http://rest.learncode.academy/api/learncode/friends",
             data: order,
             success: function (newOrder) {
                 addOrder(newOrder);
@@ -70,6 +75,7 @@ $(function () {
             }
         })
     })
+
 });
 
 
