@@ -76,10 +76,18 @@ $(function () {
         })
     })
 
-    $('.remove').on('click', function () {
+    $orders.delegate('.remove', 'click', function () {
+        var $li = $(this).closest('li');
         $.ajax({
             type: 'DELETE',
             url: "/jQueryTutorial/AJAX1/file.json" + $(this).attr('data-id'),
+
+            //cannot use this in success function
+            success: function () {
+                $li.fadeOut(300, function () {
+                    $(this).remove();
+                })
+            }
         });
     })
 });
