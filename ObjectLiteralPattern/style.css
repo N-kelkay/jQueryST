@@ -87,3 +87,7 @@ button.active {
     transition: opacity 0.3s;
     margin-top: 3px;
 }
+
+#peopleModule li i:hover {
+    opacity: 1;
+}
